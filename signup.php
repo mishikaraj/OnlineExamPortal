@@ -22,8 +22,6 @@ if (isset($_POST['studsu'])) {
         $gender1 = mysqli_real_escape_string($conn, $_POST['gender1']);
         $password1 = mysqli_real_escape_string($conn, $_POST['password1']);
         $cpassword1 = mysqli_real_escape_string($conn, $_POST['cpassword1']);
-        $password1 = crypt($password1,'rakeshmariyaplarrakesh');
-        $cpassword1 = crypt($cpassword1,'rakeshmariyaplarrakesh');
         if ($password1 == $cpassword1) {
             $sql = "insert into student (usn,name,mail,phno,dept,gender,DOB,pw) values('$usn1','$name1','$mail1','$phno1','$dept1','$gender1','$dob1','$password1')";
             if (mysqli_query($conn, $sql)) {
