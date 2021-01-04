@@ -107,9 +107,7 @@ if (isset($_POST['submit'])) {
         $type = mysqli_real_escape_string($conn, $_POST['usertype']);
         $username = mysqli_real_escape_string($conn, $_POST['email1']);
         $password = mysqli_real_escape_string($conn, $_POST['pass1']);
-        $password = crypt($password, 'rakeshmariyaplarrakesh');
         $cpassword = mysqli_real_escape_string($conn, $_POST['cpass1']);
-        $cpassword = crypt($cpassword, 'rakeshmariyaplarrakesh');
         if ($password === $cpassword) {
             $sql = "select * from " . $type . " where mail='{$username}'";
             $res =   mysqli_query($conn, $sql);
